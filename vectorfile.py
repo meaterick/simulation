@@ -21,7 +21,14 @@ class vector():
         return(
             self.x, self.y, self.z
         )
-        
+
+    def set(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+        return(
+            self.x, self.y, self.z
+        )
     # def __dot__(self, vector):
     #     return(
     #         self.x 
