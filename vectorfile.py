@@ -26,9 +26,6 @@ class vector():
         self.x = x
         self.y = y
         self.z = z
-        return(
-            self.x, self.y, self.z
-        )
     # def __dot__(self, vector):
     #     return(
     #         self.x 
