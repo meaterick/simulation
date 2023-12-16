@@ -16,7 +16,11 @@ class vector():
             self.y - vector.y,
             self.z - vector.z
         )
-        
+
+    def value(self):
+        return(
+            self.x, self.y, self.z
+        )
         
     # def __dot__(self, vector):
     #     return(
