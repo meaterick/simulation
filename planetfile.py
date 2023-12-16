@@ -7,8 +7,9 @@ class planet():
         self.vector = vector()
         self.position = position()
         
-    def gravity(self, planet):
-        81 / ((self.position.x - planet.position.x)**2 +
-        (self.position.x - planet.position.x)**2 +
-        (self.position.x - planet.position.x)**2)
+    def move(self):
+        self.position.loc += self.vector.value
+        return(
+            self.position.loc
+        )
         
