@@ -3,19 +3,6 @@ class vector():
         self.x = x
         self.y = y
         self.z = z
-        
-    def add(self, vector):
-        return(
-            self.x + vector.x,
-            self.y + vector.y,
-            self.z + vector.z
-        )
-    def sub(self, vector):
-        return(
-            self.x - vector.x,
-            self.y - vector.y,
-            self.z - vector.z
-        )
 
     def value(self):
         return(
@@ -26,6 +13,7 @@ class vector():
         self.x = x
         self.y = y
         self.z = z
+        
     # def __dot__(self, vector):
     #     return(
     #         self.x 

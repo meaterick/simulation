@@ -11,5 +11,7 @@ class position():
         
     def loc(self):
         return(
-            self.x, self.y, self.z
+            self.x,
+            self.y,
+            self.z
         )
