@@ -14,14 +14,14 @@ earth.set_mass(8.1)
 
 moon = planet()
 moon.position.set(0, 10, 0)
-moon.vector.set(-2.56, 0, 0)
+moon.vector.set(-2.55, 0, 0)
 moon.set_mass(0.1)
 
 while True:
     ax.clear()
     
     moon.move(earth)
-    # earth.move(moon)
+    earth.move(moon)
     
     for theta1 in np.arange(0, 2*math.pi, math.pi/ 4):
         for theta2 in np.arange(0, math.pi, math.pi/4):
@@ -29,8 +29,11 @@ while True:
             y = math.sin(theta1) * math.sin(theta2)
             z = math.cos(theta2)
             
+            distance2 = math.sqrt((moon.position.x - earth.position.x)**2 + (moon.position.y - earth.position.y)**2 + (moon.position.z - earth.position.z)**2)
             distance1 = math.sqrt((x - moon.position.x)**2 + (y - moon.position.y)**2 + (z - moon.position.z)**2)
-            if (distance1 < 8):
+            if (distance2+0.7 < distance1):
+                ax.scatter(x, y, z, c='r', alpha=distance1/14)
+            elif (distance2-0.7 > distance1):
                 ax.scatter(x, y, z, c='r', alpha=distance1/14)
             else:
                 ax.scatter(x, y, z, c='b')
@@ -39,8 +42,8 @@ while True:
     
     ax.plot(*earth.position.loc(), marker="o", markersize=20, color='b', alpha=0)
     
-    ax.plot(*(-10, -10, -10), marker="o", markersize=1, color='r')
-    ax.plot(*(10, 10, 10), marker="o", markersize=1, color='r')
+    ax.plot(*(-15, -15, -15), marker="o", markersize=1, color='r')
+    ax.plot(*(15, 15, 15), marker="o", markersize=1, color='r')
     
     plt.pause(0.001)
 

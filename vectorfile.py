@@ -3,16 +3,16 @@ class vector():
         self.x = x
         self.y = y
         self.z = z
+        
+    def set(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
 
     def value(self):
         return(
             self.x, self.y, self.z
         )
-
-    def set(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
         
     # def __dot__(self, vector):
     #     return(
