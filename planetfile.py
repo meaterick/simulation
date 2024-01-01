@@ -10,6 +10,7 @@ class planet():
         self.position = position()
         self.gravity = gravity()
         self.mass = 0
+        self.color = [0, 0, 0]
         
     def add(self, save, other1, other2):
         save.x = other1.x + other2.x
@@ -24,6 +25,9 @@ class planet():
     def set_mass(self, mass):
         self.mass = mass
         
+    def set_color(self, color):
+        self.color = color
+        
 
     def distance(self, other):
         return(
@@ -32,6 +36,9 @@ class planet():
 
     def move(self, Gother):
         distance = self.distance(Gother)
+        
+        if distance == 0:
+            return
         
         self.sub(self.gravity, Gother.position, self.position)
         self.vector.x = self.vector.x + (self.gravity.x / ((distance)**2) * self.mass * Gother.mass) / self.mass
